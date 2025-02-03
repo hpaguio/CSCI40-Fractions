@@ -26,6 +26,15 @@ class Fraction(object):
             numerator = -numerator
             denominator = -denominator
 
+        greatestCommonDivisor = Fraction.gcd(abs(numerator), abs(denominator))
+
+        if greatestCommonDivisor == 0:
+            self.numerator = numerator // 1
+            self.denominator = denominator // 1
+        else:
+            self.numerator = numerator // greatestCommonDivisor
+            self.denominator = denominator // greatestCommonDivisor
+
     def gcd(a, b):
         if a == 0 or b == 0:
             return 0
