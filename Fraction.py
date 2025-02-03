@@ -27,8 +27,11 @@ class Fraction(object):
             denominator = -denominator
 
     def gcd(a, b):
-        #TODO
-        pass
+        if a == 0 or b == 0:
+            return 0
+        while b:
+            a, b = b, a % b
+        return abs(a)
 
     def get_numerator(self):
         #TODO
