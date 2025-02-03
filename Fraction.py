@@ -19,6 +19,13 @@ class Fraction(object):
             
             numerator, denominator = int(parts[0]), int(parts[1])
 
+        if denominator == 0:
+            raise ZeroDivisionError("Invalid denominator 0")
+
+        if denominator < 0:
+            numerator = -numerator
+            denominator = -denominator
+
     def gcd(a, b):
         #TODO
         pass
